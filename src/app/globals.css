@@ -1,27 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.pricing-plan-wrap:nth-child(2)::after {
+  content: "";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.custom-radial-color {
+  background-image: radial-gradient(rgba(33, 33, 86, 1), rgba(4, 4, 21, 1));
+}
+.faq-accordion-header button:focus {
+  box-shadow: none !important;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.faq-accordion-header button {
+  box-shadow: none !important;
+}
+.faq-accordion-header .accordion-button {
+  background-color: rgba(255, 255, 255, 0) !important;
+  background-image: none;
+  border: none !important;
+  outline: none;
+}
+.faq-section .accordion-button:focus {
+  border: none !important;
+}
+
+.payment-features:nth-last-child(1) {
+  border-bottom: 0px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: 16px;
+  font-weight: 400;
+ font-family: 'Poppins', sans-serif !important; 
+}
+
+div {
+ font-family: 'Poppins', sans-serif !important; 
+}
+
+span {
+ font-family: 'Poppins', sans-serif !important; 
+}
+.payment-card:hover button{
+  background-color: #2563eb;
+  color: white;
+}
+a{
+  text-decoration: none !important;
+color: inherit !important;
+
 }
