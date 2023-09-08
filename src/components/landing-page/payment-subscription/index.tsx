@@ -64,4 +64,4 @@ const PaymentSubscription = (props : PaymentSubscriptionProps) => {
   );
 };
 
-export default PaymentSubscription;
+export  {PaymentSubscription};

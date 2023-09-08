@@ -1,48 +1,45 @@
-import { StaticImport } from 'next/dist/shared/lib/get-img-props'
-import Image, { StaticImageData } from 'next/image'
-import React from 'react'
-import { Check } from 'react-bootstrap-icons'
-import { GiTick } from 'react-icons/gi'
-export interface AdvantagesProps {
-    advantagesTitle?: string,
-    advantagesExplaination?: string,
-    advantagesImage?: StaticImageData; 
-    className?: string , 
-    advantagesTag?:string
-}
-const Advantages = (props: AdvantagesProps) => {
-    return (
-        <>
-            <div className={`lg:flex  mt-5 lg:space-x-3 md:space-x-3  space-y-5 md:flex ${props?.className}`}>
-                <div className='lg:w-1/2 md:w-1/2 w-full  lg:px-5 xl:px-5 2xl:px-5 px-3' >
-                    <div className=' bg-[#ebecff] text-[#5236ff] inline-block text-sx rounded-xl px-3 font-semibold '>{props?.advantagesTag}</div>
-                    <div className="mt-2 text-4xl font-bold text-black">
-                        {props?.advantagesTitle}
-                    </div>
-                    <div className='text-gray-400 mt-3'>
-                        {props?.advantagesExplaination}
-                    </div>
-                    <hr className='bg-gray-500 my-4' />
-                    <div className="flex mt-2">
-                        <div className='w-1/2 flex items-center text-sm font-semibold text-gray-700'><Check className='text-blue-500 text-3xl inline-block' />
-                            Organize your data
-                        </div>
-                        <div className='w-1/2 flex items-center text-sm font-semibold text-gray-700 '> <Check className='text-blue-500 text-3xl inline-block' />Always in sync</div>
-                    </div>
-                    <div className="flex mt-2">
-                        <div className='w-1/2 flex items-center text-sm font-semibold text-gray-700 '> <Check className='text-blue-500 text-3xl inline-block' />Work with any team</div>
-                        <div className='w-1/2 flex items-center text-sm font-semibold text-gray-700 '> <Check className='text-blue-500 text-3xl inline-block' />Embedded analytics</div>
-                    </div>
-                </div>
-                <div className='lg:w-1/2 md:w-1/2 w-full lg:px-5 2xl:px-5 xl:px-5 px-3'>
-                   {props?.advantagesImage && 
-                    <Image className='w-100' src={props?.advantagesImage}  alt='' />
-                   }
-                </div>
-            </div>
+import React from "react";
+import Dashboard from "../../../public/home-images/dashboard.png";
+import Dashboard2 from "../../../public/home-images/dashboard-2.png";
+import AdvantagesBox from "./advantages-box";
+const Advantages = () => {
+  return (
+    <>
+      <div className="lg:mx-28 mx-8">
+        <div className="text-center pt-5 ">
+          <div className=" bg-[#ebecff] text-[#5236ff] inline-block text-sx rounded-xl px-3 font-semibold">
+            Advantages
+          </div>
+          <div className="mt-2 text-4xl font-bold text-black">
+            <span>Auto UpScale Advantages</span>
+          </div>
+          <div className="text-gray-400 mt-2">
+            Enhance productivity with seamless integrations
+          </div>
+        </div>
+        <AdvantagesBox
+          advantagesExplaination=" Our car rental software allows you to fully control the entire process, monitor the loading of each car and provide the best service for your clients. With RentSyst, you can manage reservations for any vehicle directly from your smartphone. If you are not sure if this car rental system is right for you, please try the demo version."
+          advantagesTitle=" Car Rental Software"
+          advantagesImage={Dashboard}
+          advantagesTag="Latest Tech"
+        />
 
-        </>
-    )
-}
+        <AdvantagesBox
+          className="flex-row-reverse"
+          advantagesExplaination=" Cloud-based car rental management software unlocks new opportunities for your company. With it, you can control your car rental business, plan work, streamline routine operations and receive detailed reports. Install the CRM system and get all the functionality in one place for vehicle rental management. Managing your reservations has never been easier."
+          advantagesImage={Dashboard2}
+          advantagesTag="Team Work"
+        />
 
-export default Advantages
+        <AdvantagesBox
+          advantagesExplaination="We listen to your wishes and are constantly improving our cloud solution for auto business. To date, RentSyst contains all the necessary functionality, so that you can successfully manage car sharing, private car fleet, car rental and taxi fleet."
+          advantagesTitle=" Auto Business Software"
+          advantagesImage={Dashboard}
+          advantagesTag="Team Work"
+        />
+      </div>
+    </>
+  );
+};
+
+export  {Advantages};

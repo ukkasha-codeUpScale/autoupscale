@@ -1,16 +1,15 @@
 'use client'
 import React, { useState } from "react";
-import Logo from "../../../app/public/home-images/autoupscale (2).png";
+import Logo from "../../../public/home-images/autoupscale (2).png";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../button";
-import { MdNoEncryption } from "react-icons/md";
 import { GiCancel, GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
   const [mobileShow, setMobileShow] = useState<Boolean>(false);
   return (
     <>
-      <nav className=" px-24 py-3 lg:flex  xl:flex 2xl:flex justify-between custom-nvabr  hidden ">
+      <nav className="bg-[#5236FF] px-24 py-3 lg:flex  xl:flex 2xl:flex justify-between custom-nvabr  hidden ">
         <div>
           <Image src={Logo} width={200} alt="" />
         </div>

@@ -1,23 +1,25 @@
-import './globals.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import Navbar from "@/components/landing-page/navbar";
+import "./globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Auto UpScale',
-  description: 'Rental Cars',
-}
+  title: "Auto UpScale",
+  description: "Rental Cars",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+      <div className="au-base">
+        <Navbar />
+        <body className={inter.className}>{children}</body>
+      </div>
+  );
 }

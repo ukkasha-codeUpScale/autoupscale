@@ -1,39 +1,51 @@
-import Image, { StaticImageData } from "next/image";
 import React from "react";
-import { GiSpearFeather } from "react-icons/gi";
+import BlogCard from "./blog-card";
 import { TbMathGreater } from "react-icons/tb";
-export interface BlogProps {
-  blogImage?: StaticImageData;
-  blogTitle?: string;
-  blogDate?: string;
-}
-const Blog = (props: BlogProps) => {
+import BlogImageOne from "../../../public/home-images/blog-1.png";
+import BlogImageTwo from "../../../public/home-images/blog-2.png";
+import BlogImageThree from "../../../public/home-images/blog-3.png";
+
+const Blog = () => {
   return (
     <>
-      <div className="lg:w-1/3 md:w-1/2 w-full md:space-y-2 md:m-auto border rounded-2xl p-3 box border-gray-400">
-        <div className="">
-          {
-            props?.blogImage &&
-          <Image src={props?.blogImage} className="img md:m-auto sm:m-auto" alt="" />
-          }
-        </div>
-        <div className=" ">
-          {/* Use mt-auto to push content to the bottom */}
-          <div className="h-[72px] mb-4 mt-2">
-            <div className="lg:text-left text-center font-medium">{props?.blogTitle}</div>
-            <div className="lg:text-left text-center font-normal text-gray-600">{props?.blogDate}</div>
+      <div className="lg:mx-28 mx-8 pt-28">
+        <div className="lg:flex grid justify-between items-end lg:space-y-0 space-y-7">
+          <div className="text-left ">
+            <div className="mt-2 text-4xl font-bold text-black">
+              <span>News from our team</span>
+            </div>
+            <div className="text-gray-400 mt-2">
+              We are currently working on the features below.
+            </div>
           </div>
-          <div className="flex">
-            <button className=" text-gray-700 p-1 px-4 border border-gray-700 rounded-3xl font-semibold w-full">
-              Read  <TbMathGreater className="inline-block text-xs mx-3 text-gray-600 mb-1" />
+          <div>
+            <button className="text-gray-500 p-2 px-4 border border-gray-400 rounded-3xl font-semibold">
+              Check Our Blog
+              <TbMathGreater className="inline-block text-xs mx-3 text-gray-600 mb-1" />
             </button>
-           
           </div>
-          {/* Add mb-3 for the bottom margin */}
+        </div>
+
+        <div className=" lg:flex grid grid-cols-1 lg:space-x-6 space-y-6 lg:space-y-0 mt-5">
+          <BlogCard
+            blogImage={BlogImageOne}
+            blogTitle="Enhanging Your Audio Experience "
+            blogDate="Jul 7, 2023"
+          />
+          <BlogCard
+            blogImage={BlogImageTwo}
+            blogTitle="Amplify Your Podcast with Saturation: Streamline & Enhance "
+            blogDate="Jul 3, 2023"
+          />
+          <BlogCard
+            blogImage={BlogImageThree}
+            blogTitle="A Beginner's Guide to Starting Your Own Podcast"
+            blogDate="Jul 3, 2023"
+          />
         </div>
       </div>
     </>
   );
 };
 
-export default Blog;
+export  {Blog};

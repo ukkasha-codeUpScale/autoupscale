@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import FooterLogo from "../../../app/public/home-images/footer-logo.png";
-import Mail from "../../../app/public/home-images/mail.svg";
-import Twitter from "../../../app/public/home-images/twitter.svg";
-import Instagram from "../../../app/public/home-images/instagram.svg";
-import Telegram from "../../../app/public/home-images/telegram.svg";
+import FooterLogo from "../../../public/home-images/footer-logo.png";
+import Mail from "../../../public/home-images/mail.svg";
+import Twitter from "../../../public/home-images/twitter.svg";
+import Instagram from "../../../public/home-images/instagram.svg";
+import Telegram from "../../../public/home-images/telegram.svg";
 import Link from "next/link";
 const Footer = () => {
   return (
@@ -81,4 +81,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export  {Footer};
